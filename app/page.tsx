@@ -2,7 +2,7 @@
 
 import { useAuth } from '@/contexts/AuthContext';
 import Header from '@/components/Header';
-import LoginSection from '@/components/LoginSection';
+import LandingPage from '@/components/LandingPage';
 import UserTypeSelection from '@/components/UserTypeSelection';
 import ProfileSetup from '@/components/ProfileSetup';
 import Dashboard from '@/components/Dashboard';
@@ -26,36 +26,39 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
-      
-      <main className="main">
-        {!user ? (
-          <LoginSection />
-        ) : !userProfile && !showUserTypeSelection && !showProfileSetup ? (
-          <UserTypeSelection 
-            onSelectType={(type) => {
-              setShowUserTypeSelection(false);
-              setShowProfileSetup(type);
-            }}
-          />
-        ) : showProfileSetup ? (
-          <ProfileSetup 
-            userType={showProfileSetup}
-            onComplete={() => {
-              setShowProfileSetup(null);
-            }}
-          />
-        ) : userProfile ? (
-          <Dashboard />
-        ) : (
-          <UserTypeSelection 
-            onSelectType={(type) => {
-              setShowUserTypeSelection(false);
-              setShowProfileSetup(type);
-            }}
-          />
-        )}
-      </main>
+      {!user ? (
+        <LandingPage />
+      ) : (
+        <>
+          <Header />
+          <main className="main">
+            {!userProfile && !showUserTypeSelection && !showProfileSetup ? (
+              <UserTypeSelection 
+                onSelectType={(type) => {
+                  setShowUserTypeSelection(false);
+                  setShowProfileSetup(type);
+                }}
+              />
+            ) : showProfileSetup ? (
+              <ProfileSetup 
+                userType={showProfileSetup}
+                onComplete={() => {
+                  setShowProfileSetup(null);
+                }}
+              />
+            ) : userProfile ? (
+              <Dashboard />
+            ) : (
+              <UserTypeSelection 
+                onSelectType={(type) => {
+                  setShowUserTypeSelection(false);
+                  setShowProfileSetup(type);
+                }}
+              />
+            )}
+          </main>
+        </>
+      )}
     </div>
   );
 }
