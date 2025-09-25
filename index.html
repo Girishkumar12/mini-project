@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GITAM Student Achievement Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">GITAM Achievement Portal</h1>
+            <div class="user-info" id="userInfo" style="display: none;">
+                <img id="userPhoto" class="user-photo" alt="User Photo">
+                <span id="userName"></span>
+                <button id="signOutBtn" class="btn btn-secondary">Sign Out</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Login Section -->
+        <section id="loginSection" class="section">
+            <div class="container">
+                <div class="login-box">
+                    <h2>Welcome to GITAM Achievement Portal</h2>
+                    <p>Please sign in with your GITAM email account</p>
+                    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                    <p class="login-note">
+                        Valid domains: @gitam.in, @*.gitam.edu, @gitam.edu
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Type Selection -->
+        <section id="userTypeSection" class="section" style="display: none;">
+            <div class="container">
+                <div class="user-type-selection">
+                    <h2>Select Your Role</h2>
+                    <div class="role-buttons">
+                        <button id="studentBtn" class="btn btn-primary role-btn">
+                            <h3>Student</h3>
+                            <p>Submit achievement forms and view responses</p>
+                        </button>
+                        <button id="facultyBtn" class="btn btn-primary role-btn">
+                            <h3>Faculty</h3>
+                            <p>Submit lectures, reviews, and project information</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Setup -->
+        <section id="profileSetupSection" class="section" style="display: none;">
+            <div class="container">
+                <div class="profile-setup">
+                    <h2>Complete Your Profile</h2>
+                    <form id="profileForm">
+                        <!-- Student Fields -->
+                        <div id="studentFields" style="display: none;">
+                            <div class="form-group">
+                                <label for="rollNo">Roll Number *</label>
+                                <input type="text" id="rollNo" name="rollNo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="yearOfStudy">Year of Study *</label>
+                                <select id="yearOfStudy" name="yearOfStudy" required>
+                                    <option value="">Select Year</option>
+                                    <option value="1">1st Year</option>
+                                    <option value="2">2nd Year</option>
+                                    <option value="3">3rd Year</option>
+                                    <option value="4">4th Year</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="branch">Branch *</label>
+                                <select id="branch" name="branch" required>
+                                    <option value="">Select Branch</option>
+                                    <option value="CSE Core">CSE Core</option>
+                                    <option value="AIML">AIML</option>
+                                    <option value="CS">CS</option>
+                                    <option value="DS">DS</option>
+                                    <option value="IOT">IOT</option>
+                                    <option value="CSBS">CSBS</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Faculty Fields -->
+                        <div id="facultyFields" style="display: none;">
+                            <div class="form-group">
+                                <label for="employeeId">Employee ID *</label>
+                                <input type="text" id="employeeId" name="employeeId" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="department">Department *</label>
+                                <input type="text" id="department" name="department" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="facultyBranch">Branch *</label>
+                                <input type="text" id="facultyBranch" name="facultyBranch" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Save Profile</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard -->
+        <section id="dashboardSection" class="section" style="display: none;">
+            <div class="container">
+                <div class="dashboard">
+                    <h2>Dashboard</h2>
+                    <div class="dashboard-cards">
+                        <div class="card" id="newFormCard">
+                            <h3>New Submission</h3>
+                            <p>Create a new achievement form</p>
+                            <button class="btn btn-primary">Create Form</button>
+                        </div>
+                        <div class="card" id="viewResponsesCard">
+                            <h3>View Responses</h3>
+                            <p>View your past submissions and others</p>
+                            <button class="btn btn-secondary">View Responses</button>
+                        </div>
+                        <div class="card" id="reportsCard">
+                            <h3>Generate Report</h3>
+                            <p>Generate year-end achievement report</p>
+                            <button class="btn btn-secondary">Generate Report</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Achievement Form -->
+        <section id="achievementFormSection" class="section" style="display: none;">
+            <div class="container">
+                <div class="form-container">
+                    <h2>Student Achievements (1st March 2025 - 31st May 2025)</h2>
+                    <p class="form-description">
+                        Provide details of your participation and achievements in curricular, extracurricular, 
+                        and co-curricular activities from 1st March 2025 to 31st May 2025.
+                    </p>
+                    <form id="achievementForm">
+                        <!-- Achievement Form Fields will be added here -->
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faculty Form -->
+        <section id="facultyFormSection" class="section" style="display: none;">
+            <div class="container">
+                <div class="form-container">
+                    <h2>Faculty Activities Form</h2>
+                    <form id="facultyForm">
+                        <!-- Faculty Form Fields will be added here -->
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Responses View -->
+        <section id="responsesSection" class="section" style="display: none;">
+            <div class="container">
+                <div class="responses-container">
+                    <h2>Form Responses</h2>
+                    <!-- Responses content will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

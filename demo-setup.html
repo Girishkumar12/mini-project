@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GITAM Portal Demo Setup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .setup-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #007bff;
+        }
+        .btn {
+            background: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .demo-users {
+            background: #e9f7ef;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="setup-card">
+        <h1>🎓 GITAM Achievement Portal - Demo Setup</h1>
+        
+        <h2>📋 Current Implementation Status</h2>
+        <ul>
+            <li>✅ Complete HTML structure with responsive design</li>
+            <li>✅ Google OAuth integration framework</li>
+            <li>✅ Student and faculty profile management</li>
+            <li>✅ Achievement form with file uploads</li>
+            <li>✅ Faculty activity forms</li>
+            <li>✅ Response viewing with filtering</li>
+            <li>✅ Report generation system</li>
+            <li>✅ Local storage data persistence</li>
+        </ul>
+
+        <h2>🔧 Setup Required</h2>
+        <div class="demo-users">
+            <strong>For Google OAuth:</strong><br>
+            1. Get Google Client ID from Google Cloud Console<br>
+            2. Replace "YOUR_GOOGLE_CLIENT_ID" in index.html and script.js<br>
+            3. Add authorized domains to Google OAuth settings<br>
+        </div>
+
+        <h2>🧪 Demo Mode</h2>
+        <p>Since this is a demo environment, you can test the application by:</p>
+        <ol>
+            <li>Using the mock authentication (bypass Google OAuth)</li>
+            <li>Testing form submissions with sample data</li>
+            <li>Viewing the response filtering system</li>
+            <li>Generating sample reports</li>
+        </ol>
+
+        <h2>📱 Features Overview</h2>
+        
+        <h3>👨‍🎓 Student Features:</h3>
+        <ul>
+            <li>Profile creation with roll number, year, branch</li>
+            <li>Achievement form (March-May 2025)</li>
+            <li>Certificate and photo uploads (simulated)</li>
+            <li>View other students' achievements</li>
+            <li>Filter responses by branch/year</li>
+        </ul>
+
+        <h3>👨‍🏫 Faculty Features:</h3>
+        <ul>
+            <li>Profile creation with employee ID, department</li>
+            <li>Activity forms (lectures, reviews, projects)</li>
+            <li>Document uploads</li>
+            <li>Activity tracking and reporting</li>
+        </ul>
+
+        <h3>📊 Reporting Features:</h3>
+        <ul>
+            <li>Year-end achievement reports</li>
+            <li>Statistics by branch, level, category</li>
+            <li>Printable HTML reports</li>
+            <li>Data export capabilities</li>
+        </ul>
+
+        <a href="index.html" class="btn">🚀 Launch Portal</a>
+        <button class="btn" onclick="enableDemoMode()">🎭 Enable Demo Mode</button>
+    </div>
+
+    <script>
+        function enableDemoMode() {
+            // Create mock user data for testing
+            const mockStudent = {
+                id: 'demo_student_123',
+                name: 'John Doe',
+                email: 'john.doe@gitam.in',
+                imageUrl: 'https://via.placeholder.com/150',
+                signedIn: true
+            };
+
+            const mockProfile = {
+                userId: 'demo_student_123',
+                type: 'student',
+                rollNo: 'CS21B1001',
+                yearOfStudy: '3',
+                branch: 'CSE Core',
+                createdAt: new Date().toISOString()
+            };
+
+            // Store in localStorage
+            localStorage.setItem('currentUser', JSON.stringify(mockStudent));
+            localStorage.setItem('userProfile', JSON.stringify(mockProfile));
+            localStorage.setItem(`profile_${mockStudent.id}`, JSON.stringify(mockProfile));
+
+            // Create some sample responses
+            const sampleResponses = [
+                {
+                    id: Date.now().toString(),
+                    userId: 'demo_student_123',
+                    userName: 'John Doe',
+                    userEmail: 'john.doe@gitam.in',
+                    userPhoto: 'https://via.placeholder.com/150',
+                    type: 'achievement',
+                    submittedAt: new Date().toISOString(),
+                    userProfile: mockProfile,
+                    data: {
+                        eventName: 'National Coding Championship',
+                        category: 'Co-curricular Activities',
+                        achievementLevel: 'National Level',
+                        position: '1st Place',
+                        organizer: 'TechFest India',
+                        eventPlace: 'Mumbai',
+                        eventDate: '2025-04-15'
+                    }
+                },
+                {
+                    id: (Date.now() + 1).toString(),
+                    userId: 'demo_student_456',
+                    userName: 'Jane Smith',
+                    userEmail: 'jane.smith@cs.gitam.edu',
+                    userPhoto: 'https://via.placeholder.com/150/FF6B6B',
+                    type: 'achievement',
+                    submittedAt: new Date(Date.now() - 86400000).toISOString(),
+                    userProfile: {
+                        userId: 'demo_student_456',
+                        type: 'student',
+                        rollNo: 'AI21B1015',
+                        yearOfStudy: '2',
+                        branch: 'AIML'
+                    },
+                    data: {
+                        eventName: 'Hackathon 2025',
+                        category: 'Extracurricular Activities',
+                        achievementLevel: 'State Level',
+                        position: '2nd Place',
+                        organizer: 'State IT Department',
+                        eventPlace: 'Visakhapatnam',
+                        eventDate: '2025-03-20'
+                    }
+                }
+            ];
+
+            localStorage.setItem('formResponses', JSON.stringify(sampleResponses));
+
+            alert('Demo mode enabled! 🎉\n\nMock data has been loaded:\n- Student profile created\n- Sample achievements added\n\nClick "Launch Portal" to start testing!');
+        }
+    </script>
+</body>
+</html>
