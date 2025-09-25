@@ -22,7 +22,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#1e3d59] to-[#2c2c2c] text-white py-20">
+      <section className="bg-gradient-to-br from-[#007367] to-[#2c2c2c] text-white py-20">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="lg:w-1/2 mb-12 lg:mb-0">
@@ -54,11 +54,11 @@ export default function LandingPage() {
                 <button
                   onClick={handleSignIn}
                   disabled={isSigningIn}
-                  className="bg-white text-[#1e3d59] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="bg-white text-[#007367] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   {isSigningIn ? (
                     <span className="flex items-center">
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-[#1e3d59] mr-3"></div>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-[#007367] mr-3"></div>
                       Signing in...
                     </span>
                   ) : (
@@ -120,7 +120,7 @@ export default function LandingPage() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-[#1e3d59] rounded-full flex items-center justify-center mb-6 mx-auto">
+              <div className="w-16 h-16 bg-[#007367] rounded-full flex items-center justify-center mb-6 mx-auto">
                 <span className="text-2xl text-white">📝</span>
               </div>
               <h3 className="text-xl font-bold text-[#2c2c2c] mb-4 text-center">Easy Submission</h3>
@@ -131,7 +131,7 @@ export default function LandingPage() {
             </div>
             
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-[#1e3d59] rounded-full flex items-center justify-center mb-6 mx-auto">
+              <div className="w-16 h-16 bg-[#007367] rounded-full flex items-center justify-center mb-6 mx-auto">
                 <span className="text-2xl text-white">🔒</span>
               </div>
               <h3 className="text-xl font-bold text-[#2c2c2c] mb-4 text-center">Secure & Verified</h3>
@@ -142,7 +142,7 @@ export default function LandingPage() {
             </div>
             
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-[#1e3d59] rounded-full flex items-center justify-center mb-6 mx-auto">
+              <div className="w-16 h-16 bg-[#007367] rounded-full flex items-center justify-center mb-6 mx-auto">
                 <span className="text-2xl text-white">📈</span>
               </div>
               <h3 className="text-xl font-bold text-[#2c2c2c] mb-4 text-center">Real-time Analytics</h3>
@@ -153,7 +153,7 @@ export default function LandingPage() {
             </div>
             
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-[#1e3d59] rounded-full flex items-center justify-center mb-6 mx-auto">
+              <div className="w-16 h-16 bg-[#007367] rounded-full flex items-center justify-center mb-6 mx-auto">
                 <span className="text-2xl text-white">👥</span>
               </div>
               <h3 className="text-xl font-bold text-[#2c2c2c] mb-4 text-center">Community Driven</h3>
@@ -164,7 +164,7 @@ export default function LandingPage() {
             </div>
             
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-[#1e3d59] rounded-full flex items-center justify-center mb-6 mx-auto">
+              <div className="w-16 h-16 bg-[#007367] rounded-full flex items-center justify-center mb-6 mx-auto">
                 <span className="text-2xl text-white">📱</span>
               </div>
               <h3 className="text-xl font-bold text-[#2c2c2c] mb-4 text-center">Mobile Responsive</h3>
@@ -175,7 +175,7 @@ export default function LandingPage() {
             </div>
             
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-[#1e3d59] rounded-full flex items-center justify-center mb-6 mx-auto">
+              <div className="w-16 h-16 bg-[#007367] rounded-full flex items-center justify-center mb-6 mx-auto">
                 <span className="text-2xl text-white">🎯</span>
               </div>
               <h3 className="text-xl font-bold text-[#2c2c2c] mb-4 text-center">Goal Tracking</h3>
@@ -189,7 +189,7 @@ export default function LandingPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-[#1e3d59] text-white">
+      <section className="py-20 bg-[#007367] text-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Achievements by Numbers</h2>
@@ -233,7 +233,7 @@ export default function LandingPage() {
           <button
             onClick={handleSignIn}
             disabled={isSigningIn}
-            className="bg-[#1e3d59] text-white px-12 py-4 rounded-lg font-semibold text-lg hover:bg-[#163048] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            className="bg-[#007367] text-white px-12 py-4 rounded-lg font-semibold text-lg hover:bg-[#005a52] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             {isSigningIn ? (
               <span className="flex items-center">

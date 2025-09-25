@@ -3,14 +3,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #1e3d59;
-  --primary-hover: #163048;
+  --primary: #007367;
+  --primary-hover: #005a52;
   --secondary: #2c2c2c;
   --success: #28a745;
   --danger: #dc3545;
   --warning: #ffc107;
   --info: #17a2b8;
-  --gitam-primary: #1e3d59;
+  --gitam-primary: #007367;
   --gitam-secondary: #2c2c2c;
   --gitam-white: #ffffff;
   --gitam-accent: #007bff;
