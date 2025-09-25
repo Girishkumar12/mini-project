@@ -11,7 +11,7 @@ export default function Profile() {
     return (
       <div className="min-h-screen bg-gray-50">
         <Header />
-        <div className="container py-8">
+        <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="text-center">
             <p>Please complete your profile to view this page.</p>
           </div>
@@ -23,7 +23,7 @@ export default function Profile() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <div className="container py-8">
+      <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">Profile Information</h2>
           

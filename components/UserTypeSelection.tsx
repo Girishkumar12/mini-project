@@ -14,7 +14,7 @@ export default function UserTypeSelection({ onSelectType }: UserTypeSelectionPro
         <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-green-400 rounded-full blur-2xl animate-bounce" style={{animationDelay: '1s'}}></div>
       </div>
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           {/* Header Section */}
           <div className="mb-16 animate-fade-in-up">

@@ -31,7 +31,7 @@ export default function LandingPage() {
           <div className="absolute bottom-40 right-1/3 w-8 h-8 bg-white rounded-full animate-bounce" style={{animationDelay: '3s'}}></div>
         </div>
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="lg:w-1/2 mb-12 lg:mb-0 animate-fade-in-up">
               <div className="flex items-center mb-6">
@@ -130,7 +130,7 @@ export default function LandingPage() {
           <div className="absolute bottom-20 right-10 w-40 h-40 bg-blue-500 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl lg:text-5xl font-bold text-[#2c2c2c] mb-6 bg-gradient-to-r from-[#007367] to-[#2c2c2c] bg-clip-text text-transparent">
               🌟 Why Choose GITAM Achievement Portal?
@@ -227,7 +227,7 @@ export default function LandingPage() {
           }}></div>
         </div>
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
               📊 Achievements by Numbers
@@ -279,7 +279,7 @@ export default function LandingPage() {
           <div className="absolute bottom-10 right-1/4 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="container mx-auto px-6 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
           <div className="animate-fade-in-up">
             <h2 className="text-4xl lg:text-5xl font-bold text-[#2c2c2c] mb-6 bg-gradient-to-r from-[#007367] to-[#2c2c2c] bg-clip-text text-transparent">
               🚀 Ready to Showcase Your Achievements?
@@ -346,7 +346,7 @@ export default function LandingPage() {
           }}></div>
         </div>
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {/* Logo and Description */}
             <div className="md:col-span-1">

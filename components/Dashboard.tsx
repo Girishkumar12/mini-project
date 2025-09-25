@@ -10,7 +10,7 @@ export default function Dashboard() {
 
   return (
     <section className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30 py-12">
-      <div className="container mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           {/* Welcome Header */}
           <div className="text-center mb-16 animate-fade-in-up">

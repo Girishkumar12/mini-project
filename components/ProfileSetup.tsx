@@ -59,7 +59,7 @@ export default function ProfileSetup({ userType, onComplete }: ProfileSetupProps
         <div className="absolute bottom-20 left-20 w-40 h-40 bg-[#007367] rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
       </div>
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-12 animate-fade-in-up">
@@ -99,8 +99,8 @@ export default function ProfileSetup({ userType, onComplete }: ProfileSetupProps
               {userType === 'student' ? (
                 <>
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="form-group">
-                      <label htmlFor="rollNo" className="block text-sm font-semibold text-gray-700 mb-3">
+                    <div className="space-y-3">
+                      <label htmlFor="rollNo" className="block text-sm font-semibold text-gray-700">
                         🎓 Roll Number *
                       </label>
                       <input
@@ -114,8 +114,8 @@ export default function ProfileSetup({ userType, onComplete }: ProfileSetupProps
                       />
                     </div>
                     
-                    <div className="form-group">
-                      <label htmlFor="yearOfStudy" className="block text-sm font-semibold text-gray-700 mb-3">
+                    <div className="space-y-3">
+                      <label htmlFor="yearOfStudy" className="block text-sm font-semibold text-gray-700">
                         📚 Year of Study *
                       </label>
                       <select
@@ -137,8 +137,8 @@ export default function ProfileSetup({ userType, onComplete }: ProfileSetupProps
               ) : (
                 <>
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="form-group">
-                      <label htmlFor="employeeId" className="block text-sm font-semibold text-gray-700 mb-3">
+                    <div className="space-y-3">
+                      <label htmlFor="employeeId" className="block text-sm font-semibold text-gray-700">
                         🆔 Employee ID *
                       </label>
                       <input
@@ -152,8 +152,8 @@ export default function ProfileSetup({ userType, onComplete }: ProfileSetupProps
                       />
                     </div>
                     
-                    <div className="form-group">
-                      <label htmlFor="department" className="block text-sm font-semibold text-gray-700 mb-3">
+                    <div className="space-y-3">
+                      <label htmlFor="department" className="block text-sm font-semibold text-gray-700">
                         🏢 Department *
                       </label>
                       <input
@@ -171,8 +171,8 @@ export default function ProfileSetup({ userType, onComplete }: ProfileSetupProps
               )}
               
               {/* Branch Selection - Common for both */}
-              <div className="form-group">
-                <label htmlFor="branch" className="block text-sm font-semibold text-gray-700 mb-3">
+              <div className="space-y-3">
+                <label htmlFor="branch" className="block text-sm font-semibold text-gray-700">
                   🎯 Branch/Program *
                 </label>
                 <select
