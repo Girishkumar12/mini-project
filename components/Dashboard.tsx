@@ -9,87 +9,187 @@ export default function Dashboard() {
   if (!userProfile) return null;
 
   return (
-    <section className="section">
-      <div className="container">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">
-            Welcome to your {userProfile.type === 'student' ? 'Student' : 'Faculty'} Dashboard
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <div className="text-4xl mb-4">📝</div>
-              <h3 className="text-xl font-bold mb-2">New Form</h3>
-              <p className="text-gray-600 mb-4">
-                {userProfile.type === 'student' 
-                  ? 'Submit achievement forms for March-May 2025'
-                  : 'Submit guest lectures, reviews, and projects'
-                }
-              </p>
-              <Link 
-                href={userProfile.type === 'student' ? '/achievement-form' : '/faculty-form'}
-                className="btn btn-primary"
-              >
-                Create New Form
-              </Link>
-            </div>
+    <section className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30 py-12">
+      <div className="container mx-auto px-6">
+        <div className="max-w-7xl mx-auto">
+          {/* Welcome Header */}
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-[#007367] to-[#2c2c2c] bg-clip-text text-transparent">
+              🎉 Welcome to Your Dashboard
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Hello, <span className="font-semibold text-[#007367]">{userProfile.type === 'student' ? 'Student' : 'Faculty Member'}</span>! 
+              Ready to showcase your achievements and track your progress?
+            </p>
             
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <div className="text-4xl mb-4">📊</div>
-              <h3 className="text-xl font-bold mb-2">View Responses</h3>
-              <p className="text-gray-600 mb-4">
-                Browse and filter all submitted responses from the portal
-              </p>
-              <Link href="/responses" className="btn btn-primary">
-                View All Responses
-              </Link>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <div className="text-4xl mb-4">👤</div>
-              <h3 className="text-xl font-bold mb-2">Profile</h3>
-              <p className="text-gray-600 mb-4">
-                View and manage your profile information
-              </p>
-              <Link href="/profile" className="btn btn-primary">
-                Manage Profile
-              </Link>
+            {/* Progress indicator */}
+            <div className="flex items-center justify-center mt-8 space-x-4">
+              <div className="flex items-center">
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold">✓</div>
+                <div className="ml-2 text-sm text-gray-600">Choose Role</div>
+              </div>
+              <div className="w-8 h-0.5 bg-green-500"></div>
+              <div className="flex items-center">
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold">✓</div>
+                <div className="ml-2 text-sm text-gray-600">Setup Profile</div>
+              </div>
+              <div className="w-8 h-0.5 bg-green-500"></div>
+              <div className="flex items-center">
+                <div className="w-8 h-8 bg-[#007367] rounded-full flex items-center justify-center text-white text-sm font-bold">3</div>
+                <div className="ml-2 text-sm text-gray-600">Start Journey</div>
+              </div>
             </div>
           </div>
           
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-bold mb-4">Your Profile Summary</h3>
-            <div className="grid md:grid-cols-2 gap-4 text-sm">
-              <div>
-                <strong>Type:</strong> {userProfile.type === 'student' ? 'Student' : 'Faculty'}
+          {/* Action Cards */}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="group bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-[#007367]/20 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#007367]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">📝</div>
+                <h3 className="text-2xl font-bold mb-4 text-[#2c2c2c] group-hover:text-[#007367] transition-colors duration-300">
+                  ✨ New Submission
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {userProfile.type === 'student' 
+                    ? 'Submit your latest achievements and activities for March-May 2025 reporting period'
+                    : 'Document your professional activities including guest lectures, reviews, and research projects'
+                  }
+                </p>
+                <Link 
+                  href={userProfile.type === 'student' ? '/achievement-form' : '/faculty-form'}
+                  className="inline-block bg-gradient-to-r from-[#007367] to-[#008A7B] text-white px-6 py-3 rounded-xl font-semibold hover:from-[#005a52] hover:to-[#006B60] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  🚀 Create New Form
+                </Link>
               </div>
-              <div>
-                <strong>Branch:</strong> {userProfile.branch}
+            </div>
+            
+            <div className="group bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-[#007367]/20 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">📊</div>
+                <h3 className="text-2xl font-bold mb-4 text-[#2c2c2c] group-hover:text-blue-600 transition-colors duration-300">
+                  📈 View Responses
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Browse and explore all submitted responses from the portal. Filter by categories, 
+                  departments, and achievement levels to discover inspiring success stories.
+                </p>
+                <Link href="/responses" className="inline-block bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                  📋 View All Responses
+                </Link>
               </div>
+            </div>
+            
+            <div className="group bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-[#007367]/20 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">👤</div>
+                <h3 className="text-2xl font-bold mb-4 text-[#2c2c2c] group-hover:text-purple-600 transition-colors duration-300">
+                  ⚙️ Manage Profile
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  View and update your profile information, preferences, and account settings. 
+                  Keep your details current for accurate reporting.
+                </p>
+                <Link href="/profile" className="inline-block bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-purple-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                  🔧 Manage Profile
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+          {/* Profile Summary Card */}
+          <div className="bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-200/50">
+            <div className="flex items-center mb-6">
+              <div className="text-3xl mr-4">📋</div>
+              <h3 className="text-2xl font-bold text-[#2c2c2c]">Your Profile Summary</h3>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-[#007367]/10 to-transparent p-6 rounded-xl border border-[#007367]/20">
+                <div className="flex items-center mb-2">
+                  <span className="text-lg mr-2">🎯</span>
+                  <span className="font-semibold text-gray-700">Account Type</span>
+                </div>
+                <p className="text-lg font-bold text-[#007367]">
+                  {userProfile.type === 'student' ? '🎓 Student' : '👨‍🏫 Faculty Member'}
+                </p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-blue-500/10 to-transparent p-6 rounded-xl border border-blue-500/20">
+                <div className="flex items-center mb-2">
+                  <span className="text-lg mr-2">🏢</span>
+                  <span className="font-semibold text-gray-700">Branch/Department</span>
+                </div>
+                <p className="text-lg font-bold text-blue-600">{userProfile.branch}</p>
+              </div>
+              
               {userProfile.type === 'student' && userProfile.rollNo && (
                 <>
-                  <div>
-                    <strong>Roll Number:</strong> {userProfile.rollNo}
+                  <div className="bg-gradient-to-br from-green-500/10 to-transparent p-6 rounded-xl border border-green-500/20">
+                    <div className="flex items-center mb-2">
+                      <span className="text-lg mr-2">🆔</span>
+                      <span className="font-semibold text-gray-700">Roll Number</span>
+                    </div>
+                    <p className="text-lg font-bold text-green-600">{userProfile.rollNo}</p>
                   </div>
-                  <div>
-                    <strong>Year:</strong> {userProfile.yearOfStudy} Year
+                  
+                  <div className="bg-gradient-to-br from-orange-500/10 to-transparent p-6 rounded-xl border border-orange-500/20">
+                    <div className="flex items-center mb-2">
+                      <span className="text-lg mr-2">📚</span>
+                      <span className="font-semibold text-gray-700">Year of Study</span>
+                    </div>
+                    <p className="text-lg font-bold text-orange-600">{userProfile.yearOfStudy} Year</p>
                   </div>
                 </>
               )}
+              
               {userProfile.type === 'faculty' && (
                 <>
                   {userProfile.employeeId && (
-                    <div>
-                      <strong>Employee ID:</strong> {userProfile.employeeId}
+                    <div className="bg-gradient-to-br from-green-500/10 to-transparent p-6 rounded-xl border border-green-500/20">
+                      <div className="flex items-center mb-2">
+                        <span className="text-lg mr-2">🆔</span>
+                        <span className="font-semibold text-gray-700">Employee ID</span>
+                      </div>
+                      <p className="text-lg font-bold text-green-600">{userProfile.employeeId}</p>
                     </div>
                   )}
                   {userProfile.department && (
-                    <div>
-                      <strong>Department:</strong> {userProfile.department}
+                    <div className="bg-gradient-to-br from-orange-500/10 to-transparent p-6 rounded-xl border border-orange-500/20">
+                      <div className="flex items-center mb-2">
+                        <span className="text-lg mr-2">🏛️</span>
+                        <span className="font-semibold text-gray-700">Department</span>
+                      </div>
+                      <p className="text-lg font-bold text-orange-600">{userProfile.department}</p>
                     </div>
                   )}
                 </>
               )}
+            </div>
+            
+            {/* Quick Stats */}
+            <div className="mt-8 pt-6 border-t border-gray-200">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div className="p-4">
+                  <div className="text-2xl font-bold text-[#007367]">0</div>
+                  <div className="text-sm text-gray-600">Forms Submitted</div>
+                </div>
+                <div className="p-4">
+                  <div className="text-2xl font-bold text-blue-600">0</div>
+                  <div className="text-sm text-gray-600">Pending Reviews</div>
+                </div>
+                <div className="p-4">
+                  <div className="text-2xl font-bold text-green-600">0</div>
+                  <div className="text-sm text-gray-600">Approved</div>
+                </div>
+                <div className="p-4">
+                  <div className="text-2xl font-bold text-purple-600">0</div>
+                  <div className="text-sm text-gray-600">Total Points</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
