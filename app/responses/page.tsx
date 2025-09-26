@@ -88,7 +88,7 @@ export default function Responses() {
     return (
       <div className="min-h-screen bg-gray-50">
         <Header />
-        <div className="container py-8">
+        <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="text-center">
             <p>Please complete your profile to view responses.</p>
           </div>
@@ -101,7 +101,7 @@ export default function Responses() {
     return (
       <div className="min-h-screen bg-gray-50">
         <Header />
-        <div className="container py-8">
+        <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
             <p>Loading responses...</p>
@@ -114,7 +114,7 @@ export default function Responses() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <div className="container py-8">
+      <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">Form Responses</h2>
           

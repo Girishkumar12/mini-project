@@ -55,7 +55,7 @@ export default function AchievementForm() {
     return (
       <div className="min-h-screen bg-gray-50">
         <Header />
-        <div className="container py-8">
+        <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="text-center">
             <p>Please complete your profile to access forms.</p>
           </div>
@@ -67,7 +67,7 @@ export default function AchievementForm() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <div className="container py-8">
+      <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
           <h2 className="text-2xl font-bold mb-6">Student Achievement Form</h2>
           <p className="text-gray-600 mb-6">Submit your achievements for March-May 2025</p>
@@ -181,10 +181,10 @@ export default function AchievementForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn btn-primary text-lg px-8 py-3 mr-4"
+                className="bg-[#007367] text-white text-lg px-8 py-3 mr-4 rounded-lg font-medium hover:bg-[#005a52] transition-colors duration-300 disabled:opacity-50"
               >
                 {isSubmitting ? (
-                  <span className="flex items-center">
+                  <span className="flex items-center justify-center">
                     <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
                     Submitting...
                   </span>
@@ -195,7 +195,7 @@ export default function AchievementForm() {
               <button
                 type="button"
                 onClick={() => router.push('/')}
-                className="btn btn-secondary text-lg px-8 py-3"
+                className="bg-[#2c2c2c] text-white text-lg px-8 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors duration-300"
               >
                 Cancel
               </button>
