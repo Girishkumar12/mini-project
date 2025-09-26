@@ -32,9 +32,9 @@ export default function LandingPage() {
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center justify-between">
-            <div className="lg:w-1/2 mb-12 lg:mb-0 animate-fade-in-up text-center lg:text-left">
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start mb-6 space-y-4 sm:space-y-0 sm:space-x-4">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+            <div className="lg:w-1/2 mb-8 lg:mb-0 animate-fade-in-up text-center lg:text-left">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start mb-6 sm:mb-8 space-y-4 sm:space-y-0 sm:space-x-4">
                 <div className="relative flex-shrink-0">
                   <Image 
                     src="/gitam-logo.png" 
@@ -61,11 +61,12 @@ export default function LandingPage() {
                 <span className="font-semibold text-white">Join thousands of achievers</span> in building your success story.
               </p>
               
-              <div className="space-y-4 sm:space-y-6">
+              <div className="space-y-4 sm:space-y-6 flex flex-col items-center lg:items-start">
                 <button
                   onClick={handleSignIn}
                   disabled={isSigningIn}
                   className="group bg-white text-[#007367] w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-green-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden min-h-[48px] touch-manipulation"
+                >
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                   {isSigningIn ? (
@@ -89,31 +90,31 @@ export default function LandingPage() {
               </div>
             </div>
             
-            <div className="lg:w-1/2 lg:pl-12 animate-fade-in-right mt-8 lg:mt-0">
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:bg-white/15">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-4 sm:mb-6 text-center bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+            <div className="lg:w-1/2 lg:pl-8 xl:pl-12 animate-fade-in-right">
+              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:bg-white/15 max-w-lg mx-auto lg:max-w-none">
+                <h3 className="text-xl sm:text-2xl lg:text-2xl font-bold mb-6 text-center bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
                   🎯 Quick Access Portal
                 </h3>
-                <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                  <div className="text-center p-3 sm:p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 cursor-pointer group touch-manipulation min-h-[80px] flex flex-col justify-center">
-                    <div className="text-2xl sm:text-3xl mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300">🎓</div>
-                    <div className="font-semibold text-white text-sm sm:text-base">Students</div>
-                    <div className="text-xs sm:text-sm text-blue-200 hidden sm:block">Submit Achievements</div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 cursor-pointer group touch-manipulation min-h-[100px] flex flex-col justify-center items-center">
+                    <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">🎓</div>
+                    <div className="font-semibold text-white text-sm sm:text-base mb-1">Students</div>
+                    <div className="text-xs text-blue-200">Submit Achievements</div>
                   </div>
-                  <div className="text-center p-3 sm:p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 cursor-pointer group touch-manipulation min-h-[80px] flex flex-col justify-center">
-                    <div className="text-2xl sm:text-3xl mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300">👨‍🏫</div>
-                    <div className="font-semibold text-white text-sm sm:text-base">Faculty</div>
-                    <div className="text-xs sm:text-sm text-blue-200 hidden sm:block">Track Activities</div>
+                  <div className="text-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 cursor-pointer group touch-manipulation min-h-[100px] flex flex-col justify-center items-center">
+                    <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">👨‍🏫</div>
+                    <div className="font-semibold text-white text-sm sm:text-base mb-1">Faculty</div>
+                    <div className="text-xs text-blue-200">Track Activities</div>
                   </div>
-                  <div className="text-center p-3 sm:p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 cursor-pointer group touch-manipulation min-h-[80px] flex flex-col justify-center">
-                    <div className="text-2xl sm:text-3xl mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300">📊</div>
-                    <div className="font-semibold text-white text-sm sm:text-base">Reports</div>
-                    <div className="text-xs sm:text-sm text-blue-200 hidden sm:block">Analytics & Insights</div>
+                  <div className="text-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 cursor-pointer group touch-manipulation min-h-[100px] flex flex-col justify-center items-center">
+                    <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">📊</div>
+                    <div className="font-semibold text-white text-sm sm:text-base mb-1">Reports</div>
+                    <div className="text-xs text-blue-200">Analytics & Insights</div>
                   </div>
-                  <div className="text-center p-3 sm:p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 cursor-pointer group touch-manipulation min-h-[80px] flex flex-col justify-center">
-                    <div className="text-2xl sm:text-3xl mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300">🏆</div>
-                    <div className="font-semibold text-white text-sm sm:text-base">Recognition</div>
-                    <div className="text-xs sm:text-sm text-blue-200 hidden sm:block">Celebrate Success</div>
+                  <div className="text-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 cursor-pointer group touch-manipulation min-h-[100px] flex flex-col justify-center items-center">
+                    <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">🏆</div>
+                    <div className="font-semibold text-white text-sm sm:text-base mb-1">Recognition</div>
+                    <div className="text-xs text-blue-200">Celebrate Success</div>
                   </div>
                 </div>
               </div>
@@ -142,74 +143,74 @@ export default function LandingPage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div className="group bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-[#007367]/20 relative overflow-hidden touch-manipulation">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
+            <div className="group bg-white p-6 lg:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-[#007367]/20 relative overflow-hidden touch-manipulation h-full flex flex-col">
               <div className="absolute inset-0 bg-gradient-to-br from-[#007367]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#007367] to-[#008A7B] rounded-full flex items-center justify-center mb-4 sm:mb-6 mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 relative z-10">
-                <span className="text-lg sm:text-2xl text-white">📝</span>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#007367] to-[#008A7B] rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 relative z-10">
+                <span className="text-2xl text-white">📝</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#2c2c2c] mb-3 sm:mb-4 text-center group-hover:text-[#007367] transition-colors duration-300 relative z-10">✨ Easy Submission</h3>
-              <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed relative z-10">
+              <h3 className="text-xl font-bold text-[#2c2c2c] mb-4 text-center group-hover:text-[#007367] transition-colors duration-300 relative z-10">✨ Easy Submission</h3>
+              <p className="text-gray-600 text-center leading-relaxed relative z-10 flex-grow">
                 Submit your achievements and activities with our <span className="font-semibold">intuitive form system</span>. 
                 Upload certificates and track your progress seamlessly with real-time updates.
               </p>
             </div>
             
-            <div className="group bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-[#007367]/20 relative overflow-hidden touch-manipulation">
+            <div className="group bg-white p-6 lg:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-[#007367]/20 relative overflow-hidden touch-manipulation h-full flex flex-col">
               <div className="absolute inset-0 bg-gradient-to-br from-[#007367]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#007367] to-[#008A7B] rounded-full flex items-center justify-center mb-4 sm:mb-6 mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 relative z-10">
-                <span className="text-lg sm:text-2xl text-white">🔒</span>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#007367] to-[#008A7B] rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 relative z-10">
+                <span className="text-2xl text-white">🔒</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#2c2c2c] mb-3 sm:mb-4 text-center group-hover:text-[#007367] transition-colors duration-300 relative z-10">🛡️ Secure & Verified</h3>
-              <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed relative z-10">
+              <h3 className="text-xl font-bold text-[#2c2c2c] mb-4 text-center group-hover:text-[#007367] transition-colors duration-300 relative z-10">🛡️ Secure & Verified</h3>
+              <p className="text-gray-600 text-center leading-relaxed relative z-10 flex-grow">
                 Your data is protected with <span className="font-semibold">enterprise-grade security</span>. Only verified 
                 GITAM email accounts can access the platform with complete privacy assurance.
               </p>
             </div>
             
-            <div className="group bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-[#007367]/20 relative overflow-hidden touch-manipulation">
+            <div className="group bg-white p-6 lg:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-[#007367]/20 relative overflow-hidden touch-manipulation h-full flex flex-col">
               <div className="absolute inset-0 bg-gradient-to-br from-[#007367]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#007367] to-[#008A7B] rounded-full flex items-center justify-center mb-4 sm:mb-6 mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 relative z-10">
-                <span className="text-lg sm:text-2xl text-white">📈</span>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#007367] to-[#008A7B] rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 relative z-10">
+                <span className="text-2xl text-white">📈</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#2c2c2c] mb-3 sm:mb-4 text-center group-hover:text-[#007367] transition-colors duration-300 relative z-10">📊 Real-time Analytics</h3>
-              <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed relative z-10">
+              <h3 className="text-xl font-bold text-[#2c2c2c] mb-4 text-center group-hover:text-[#007367] transition-colors duration-300 relative z-10">📊 Real-time Analytics</h3>
+              <p className="text-gray-600 text-center leading-relaxed relative z-10 flex-grow">
                 Generate <span className="font-semibold">comprehensive reports</span> and gain insights into achievements 
                 across branches, years, and categories with dynamic visualizations.
               </p>
             </div>
             
-            <div className="group bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-[#007367]/20 relative overflow-hidden touch-manipulation">
+            <div className="group bg-white p-6 lg:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-[#007367]/20 relative overflow-hidden touch-manipulation h-full flex flex-col">
               <div className="absolute inset-0 bg-gradient-to-br from-[#007367]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#007367] to-[#008A7B] rounded-full flex items-center justify-center mb-4 sm:mb-6 mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 relative z-10">
-                <span className="text-lg sm:text-2xl text-white">👥</span>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#007367] to-[#008A7B] rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 relative z-10">
+                <span className="text-2xl text-white">👥</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#2c2c2c] mb-3 sm:mb-4 text-center group-hover:text-[#007367] transition-colors duration-300 relative z-10">🤝 Community Driven</h3>
-              <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed relative z-10">
+              <h3 className="text-xl font-bold text-[#2c2c2c] mb-4 text-center group-hover:text-[#007367] transition-colors duration-300 relative z-10">🤝 Community Driven</h3>
+              <p className="text-gray-600 text-center leading-relaxed relative z-10 flex-grow">
                 Connect with fellow students and faculty. <span className="font-semibold">View and get inspired</span> 
                 by achievements from across the vibrant GITAM community.
               </p>
             </div>
             
-            <div className="group bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-[#007367]/20 relative overflow-hidden touch-manipulation">
+            <div className="group bg-white p-6 lg:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-[#007367]/20 relative overflow-hidden touch-manipulation h-full flex flex-col">
               <div className="absolute inset-0 bg-gradient-to-br from-[#007367]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#007367] to-[#008A7B] rounded-full flex items-center justify-center mb-4 sm:mb-6 mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 relative z-10">
-                <span className="text-lg sm:text-2xl text-white">📱</span>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#007367] to-[#008A7B] rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 relative z-10">
+                <span className="text-2xl text-white">📱</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#2c2c2c] mb-3 sm:mb-4 text-center group-hover:text-[#007367] transition-colors duration-300 relative z-10">📲 Mobile Responsive</h3>
-              <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed relative z-10">
+              <h3 className="text-xl font-bold text-[#2c2c2c] mb-4 text-center group-hover:text-[#007367] transition-colors duration-300 relative z-10">📲 Mobile Responsive</h3>
+              <p className="text-gray-600 text-center leading-relaxed relative z-10 flex-grow">
                 Access your achievements <span className="font-semibold">anytime, anywhere</span>. Our platform works 
                 seamlessly across all devices and screen sizes for optimal experience.
               </p>
             </div>
             
-            <div className="group bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-[#007367]/20 relative overflow-hidden touch-manipulation">
+            <div className="group bg-white p-6 lg:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-[#007367]/20 relative overflow-hidden touch-manipulation h-full flex flex-col">
               <div className="absolute inset-0 bg-gradient-to-br from-[#007367]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#007367] to-[#008A7B] rounded-full flex items-center justify-center mb-4 sm:mb-6 mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 relative z-10">
-                <span className="text-lg sm:text-2xl text-white">🎯</span>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#007367] to-[#008A7B] rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 relative z-10">
+                <span className="text-2xl text-white">🎯</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#2c2c2c] mb-3 sm:mb-4 text-center group-hover:text-[#007367] transition-colors duration-300 relative z-10">🚀 Goal Tracking</h3>
-              <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed relative z-10">
+              <h3 className="text-xl font-bold text-[#2c2c2c] mb-4 text-center group-hover:text-[#007367] transition-colors duration-300 relative z-10">🚀 Goal Tracking</h3>
+              <p className="text-gray-600 text-center leading-relaxed relative z-10 flex-grow">
                 Set and track your <span className="font-semibold">academic goals</span>. Monitor your progress and 
                 celebrate milestones along your transformative educational journey.
               </p>
